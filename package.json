@@ -1,0 +1,30 @@
+{
+  "name": "mycodelab",
+  "version": "1.0.0",
+  "description": "The Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.coShadowCelebi/ShadowCelebi.git"
+  },
+  "keywords": [
+    "Discord-Bot"
+  ],
+  "author": "ShadowCelebi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShadowCelebi/ShadowCelebi/issues"
+  },
+  "homepage": "https://github.com/ShadowCelebi/ShadowCelebi#readme",
+  "dependencies": {
+    "colors": "1.4.0",
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.4"
+  }
+}
