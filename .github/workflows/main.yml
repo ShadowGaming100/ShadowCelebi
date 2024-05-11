@@ -1,0 +1,21 @@
+name: Pull Changes from Org Repo
+
+on: workflow_dispatch
+
+jobs:
+  pull-changes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout personal repository
+      uses: actions/checkout@v2
+      with:
+        repository: ShadowGaming100/ShadowCelebi
+        token: ${{ secrets.PAT }}
+
+    - name: Pull changes from org repository
+      run: git -c pull.rebase=true pull --force https://github.com/ShadowCelebi/ShadowCelebi.git
+
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
