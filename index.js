@@ -41,3 +41,5 @@ try {
 } catch (error) {
   errorCmdLogs(client, interaction, error);
 }
+
+require('./server')
