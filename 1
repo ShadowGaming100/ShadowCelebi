@@ -37,7 +37,7 @@ function run() {
     }
 
     checkRequirement "curl"
-    checkRequirement "unzip"
+    checkRequirement "python3"
 
     info "Trying to find the correct directory..."
     for path in "${paths[@]}"; do
@@ -73,8 +73,12 @@ function run() {
         info "Creating HACS directory..."
         mkdir "$haPath/custom_components/hacs"
 
-        info "Unpacking HACS..."
-        unzip "$haPath/custom_components/hacs.zip" -d "$haPath/custom_components/hacs" >/dev/null 2>&1
+        info "Unpacking HACS using Python..."
+        python3 -c "
+import zipfile
+with zipfile.ZipFile('$haPath/custom_components/hacs.zip', 'r') as zip_ref:
+    zip_ref.extractall('$haPath/custom_components/hacs')
+        " >/dev/null 2>&1
 
         echo
         info "Verifying versions"
